@@ -2,9 +2,6 @@ import {
   Star,
   ArrowRight,
   CircleCheckBig,
-  TrendingUp,
-  Presentation,
-  Activity,
   MessageSquare,
   Search,
   Target,
@@ -21,6 +18,8 @@ import {
   Instagram,
 } from "lucide-react";
 import Navbar from "./components/Navbar";
+import FAQ from "./components/FAQ";
+import WhatsAppButton from "./components/WhatsAppButton";
 
 /* ─────────────────────────── HERO ──────────────────────────── */
 function Hero() {
@@ -247,116 +246,6 @@ function Guarantee() {
                     <span>{item}</span>
                   </div>
                 ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-/* ─────────────────────── DASHBOARD ─────────────────────── */
-function Dashboard() {
-  const features = [
-    {
-      icon: <TrendingUp size={24} className="text-blue-400" />,
-      title: "Real-Time Analytics",
-      desc: "Monitor your campaign performance, impressions, clicks, and conversions as they happen.",
-    },
-    {
-      icon: <Presentation size={24} className="text-blue-400" />,
-      title: "Campaign Overview",
-      desc: "Get a comprehensive view of your ad campaigns, landing pages, and conversion metrics in one place.",
-    },
-    {
-      icon: <Activity size={24} className="text-blue-400" />,
-      title: "Performance Insights",
-      desc: "View detailed reports and insights to understand what’s working and where to optimize.",
-    },
-  ];
-
-  return (
-    <section className="py-24 bg-black relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-900/20 to-purple-900/20 opacity-50" />
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <span className="inline-block px-3 py-1 text-sm font-medium bg-gray-800 text-gray-300 rounded-full border border-gray-700 mb-4">
-            Client Dashboard
-          </span>
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            Track Your Success in <span className="text-blue-400">Real-Time</span>
-          </h2>
-          <p className="mt-4 text-xl text-gray-400 max-w-3xl mx-auto">
-            Access your personalized dashboard to monitor campaign performance
-            and track your ROI
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div className="space-y-8">
-            {features.map((f) => (
-              <div
-                key={f.title}
-                className="bg-gray-900/50 backdrop-blur-sm p-6 rounded-xl border border-gray-700 hover:border-blue-500 transition-all duration-300"
-              >
-                <div className="flex items-start gap-4">
-                  <div className="bg-blue-600/20 p-3 rounded-lg">{f.icon}</div>
-                  <div>
-                    <h3 className="text-xl font-semibold text-white mb-2">
-                      {f.title}
-                    </h3>
-                    <p className="text-gray-300">{f.desc}</p>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          <div className="relative group">
-            <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-blue-400 rounded-xl blur opacity-25 group-hover:opacity-40 transition duration-1000" />
-            <div className="relative bg-gray-900 rounded-xl overflow-hidden border border-gray-700 transition-transform duration-300 group-hover:scale-[1.02]">
-              <div className="flex items-center gap-2 px-4 py-3 border-b border-gray-800">
-                <div className="w-3 h-3 rounded-full bg-red-500/70" />
-                <div className="w-3 h-3 rounded-full bg-yellow-500/70" />
-                <div className="w-3 h-3 rounded-full bg-green-500/70" />
-                <span className="text-xs text-gray-500 ml-3">
-                  dashboard.mak-growths.com
-                </span>
-              </div>
-              <div className="p-6">
-                <div className="flex items-center justify-between mb-6">
-                  <div>
-                    <p className="text-xs text-gray-500">Company Info</p>
-                    <p className="text-white font-semibold">Your Business</p>
-                  </div>
-                  <span className="text-xs px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
-                    Premium
-                  </span>
-                </div>
-                <div className="grid grid-cols-3 gap-3">
-                  {[
-                    { label: "Views", value: "14k" },
-                    { label: "Ad Impressions", value: "2.1k" },
-                    { label: "Clicks", value: "502" },
-                  ].map((stat) => (
-                    <div
-                      key={stat.label}
-                      className="bg-white/5 rounded-lg p-3 text-center border border-gray-800"
-                    >
-                      <p className="text-lg font-bold text-white">{stat.value}</p>
-                      <p className="text-[10px] text-gray-500">{stat.label}</p>
-                    </div>
-                  ))}
-                </div>
-                <div className="mt-6 text-center bg-white/5 border border-gray-800 rounded-lg p-4">
-                  <p className="text-white font-semibold">
-                    Your Personal Campaign Dashboard
-                  </p>
-                  <p className="text-gray-300 text-sm">
-                    Track metrics that matter to your business
-                  </p>
-                </div>
               </div>
             </div>
           </div>
@@ -777,13 +666,14 @@ export default function Home() {
       <Hero />
       <Services />
       <Guarantee />
-      <Dashboard />
       <Process />
       <Pricing />
       <Results />
       <Comparison />
+      <FAQ />
       <CtaBanner />
       <Footer />
+      <WhatsAppButton />
     </main>
   );
 }
