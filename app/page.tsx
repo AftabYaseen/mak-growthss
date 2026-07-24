@@ -49,6 +49,24 @@ function Hero() {
           <span className="text-blue-500 text-sm">200+ businesses scaled</span>
         </div>
 
+        <div className="flex flex-wrap items-center justify-center gap-6 sm:gap-8 mb-8 sm:mb-12">
+          <img
+            src="/badges/google-5-star.webp"
+            alt="Google 5-Star Rating"
+            className="h-16 sm:h-20 w-auto"
+          />
+          <img
+            src="/badges/designrush-verified.webp"
+            alt="DesignRush Verified Agency 2024"
+            className="h-16 sm:h-20 w-auto"
+          />
+          <img
+            src="/badges/clutch-deliver.webp"
+            alt="Clutch - Clients Say We Deliver"
+            className="h-16 sm:h-20 w-auto"
+          />
+        </div>
+
         <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-white mt-8 sm:mt-12">
           <span className="block">
             Get{" "}
@@ -104,20 +122,46 @@ function Hero() {
 /* ─────────────────────────── STATS ─────────────────────────── */
 function Stats() {
   const stats = [
-    { Icon: Rocket, value: "40+", label: "Projects Delivered" },
-    { Icon: Globe2, value: "UK · US · CA · AU", label: "Countries We Serve" },
-    { Icon: Clock, value: "7 Days", label: "Avg. Delivery Time" },
+    {
+      Icon: Rocket,
+      value: "40+",
+      label: "Projects Delivered",
+      gradient: "from-blue-500 to-indigo-600",
+    },
+    {
+      Icon: Globe2,
+      value: "UK · US · CA · AU",
+      label: "Countries We Serve",
+      gradient: "from-emerald-500 to-teal-600",
+    },
+    {
+      Icon: Clock,
+      value: "7 Days",
+      label: "Avg. Delivery Time",
+      gradient: "from-amber-500 to-orange-600",
+    },
   ];
 
   return (
-    <section className="bg-black py-12 sm:py-16 border-y border-gray-800">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-10 sm:gap-8 text-center">
+    <section className="relative bg-black py-20 overflow-hidden">
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute -right-1/4 top-0 w-1/2 h-1/2 bg-blue-500/10 rounded-full blur-3xl" />
+        <div className="absolute -left-1/4 bottom-0 w-1/2 h-1/2 bg-blue-500/10 rounded-full blur-3xl" />
+      </div>
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
           {stats.map((s) => (
-            <div key={s.label} className="flex flex-col items-center">
-              <s.Icon size={32} className="text-blue-500 mb-3" strokeWidth={1.5} />
+            <div
+              key={s.label}
+              className="flex flex-col items-center text-center bg-gray-900/50 backdrop-blur-sm rounded-2xl border border-gray-800 px-6 py-10 transition-all duration-300 hover:border-gray-600 hover:-translate-y-1"
+            >
+              <div
+                className={`flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br ${s.gradient} mb-5 shadow-lg`}
+              >
+                <s.Icon size={28} className="text-white" strokeWidth={1.75} />
+              </div>
               <div className="text-2xl sm:text-3xl font-bold text-white">{s.value}</div>
-              <div className="text-gray-400 text-sm mt-1">{s.label}</div>
+              <div className="text-gray-400 text-sm mt-2">{s.label}</div>
             </div>
           ))}
         </div>
@@ -456,7 +500,7 @@ function Results() {
     {
       name: "Sunnamusk",
       url: "https://sunnamusk.com",
-      gradient: "from-emerald-600 to-teal-700",
+      image: "/portfolio/sunnamusk.jpg",
       tag: "Fragrance & Home Scents",
       headline: "Shopify store build and ongoing optimisation.",
       stat1: { label: "Increase in Revenue", value: "35%" },
@@ -465,7 +509,7 @@ function Results() {
     {
       name: "Shnuggle USA",
       url: "https://shnuggleusa.com",
-      gradient: "from-indigo-600 to-blue-700",
+      image: "/portfolio/shnuggle.jpg",
       tag: "Baby Care Products",
       headline: "Shopify store build and ongoing optimisation.",
       stat1: { label: "Increase in Monthly Orders", value: "48%" },
@@ -474,7 +518,7 @@ function Results() {
     {
       name: "Green People",
       url: "https://greenpeople.co.uk",
-      gradient: "from-amber-600 to-orange-700",
+      image: "/portfolio/greenpeople.jpg",
       tag: "Organic Beauty & Skincare",
       headline: "Shopify store build and ongoing optimisation.",
       stat1: { label: "Increase in Average Order Value", value: "27%" },
@@ -508,7 +552,12 @@ function Results() {
               rel="noopener noreferrer"
               className="flex flex-col rounded-2xl overflow-hidden bg-gray-900/50 backdrop-blur-sm border border-gray-700 transition-all duration-300 hover:border-gray-500 group"
             >
-              <div className={`relative h-64 bg-gradient-to-br ${c.gradient}`}>
+              <div className="relative h-64 overflow-hidden">
+                <img
+                  src={c.image}
+                  alt={`${c.name} website`}
+                  className="absolute inset-0 w-full h-full object-cover object-top transition-transform duration-300 group-hover:scale-105"
+                />
                 <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40 to-transparent" />
                 <h3 className="absolute bottom-4 left-4 text-2xl font-bold text-white">
                   {c.name}
