@@ -12,7 +12,7 @@ export default function Navbar() {
         <div className="flex h-16 items-center justify-between">
           <div className="flex-shrink-0">
             <a className="text-2xl font-bold text-white cursor-pointer" href="/">
-              MAK Growths
+              MAK
             </a>
           </div>
 
