@@ -35,11 +35,21 @@ function Hero() {
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
         <div className="flex flex-col sm:flex-row items-center justify-center space-y-2 sm:space-y-0 sm:space-x-3 mb-8 sm:mb-12">
           <div className="flex -space-x-3">
-            <div className="w-10 h-10 rounded-full bg-gradient-to-br from-blue-500 to-indigo-600 border-2 border-black flex items-center justify-center">
-              <Shield size={16} className="text-white" />
-            </div>
-            <div className="w-10 h-10 rounded-full bg-gradient-to-br from-emerald-500 to-teal-600 border-2 border-black" />
-            <div className="w-10 h-10 rounded-full bg-gradient-to-br from-yellow-400 to-yellow-600 border-2 border-black" />
+            <img
+              src="/badges/google-5-star.webp"
+              alt="Google 5-Star Rating"
+              className="w-10 h-10 rounded-full border-2 border-black object-cover bg-white"
+            />
+            <img
+              src="/badges/designrush-verified.webp"
+              alt="DesignRush Verified Agency 2024"
+              className="w-10 h-10 rounded-full border-2 border-black object-cover bg-white"
+            />
+            <img
+              src="/badges/clutch-deliver.webp"
+              alt="Clutch - Clients Say We Deliver"
+              className="w-10 h-10 rounded-full border-2 border-black object-cover bg-white"
+            />
           </div>
           <div className="flex items-center text-yellow-300">
             {[...Array(5)].map((_, i) => (
@@ -47,24 +57,6 @@ function Hero() {
             ))}
           </div>
           <span className="text-blue-500 text-sm">200+ businesses scaled</span>
-        </div>
-
-        <div className="flex flex-wrap items-center justify-center gap-6 sm:gap-8 mb-8 sm:mb-12">
-          <img
-            src="/badges/google-5-star.webp"
-            alt="Google 5-Star Rating"
-            className="h-16 sm:h-20 w-auto"
-          />
-          <img
-            src="/badges/designrush-verified.webp"
-            alt="DesignRush Verified Agency 2024"
-            className="h-16 sm:h-20 w-auto"
-          />
-          <img
-            src="/badges/clutch-deliver.webp"
-            alt="Clutch - Clients Say We Deliver"
-            className="h-16 sm:h-20 w-auto"
-          />
         </div>
 
         <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-white mt-8 sm:mt-12">
@@ -143,7 +135,7 @@ function Stats() {
   ];
 
   return (
-    <section className="relative bg-black py-20 overflow-hidden">
+    <section className="relative bg-black py-16 overflow-hidden">
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute -right-1/4 top-0 w-1/2 h-1/2 bg-blue-500/10 rounded-full blur-3xl" />
         <div className="absolute -left-1/4 bottom-0 w-1/2 h-1/2 bg-blue-500/10 rounded-full blur-3xl" />
@@ -226,11 +218,11 @@ function Services() {
   return (
     <section
       id="services"
-      className="py-24 bg-black text-white relative overflow-hidden"
+      className="py-16 bg-black text-white relative overflow-hidden"
     >
       <div className="absolute inset-0 bg-gradient-to-br from-blue-900/20 to-purple-900/20 opacity-50" />
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
+        <div className="text-center mb-12">
           <span className="inline-block px-3 py-1 text-sm font-medium bg-gray-800 text-gray-300 rounded-full border border-gray-700 mb-4">
             Services
           </span>
@@ -352,7 +344,7 @@ function Process() {
   ];
 
   return (
-    <section id="process" className="relative bg-black py-24 sm:py-32 overflow-hidden">
+    <section id="process" className="relative bg-black py-16 overflow-hidden">
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute -right-1/4 top-1/2 w-1/2 h-1/2 bg-blue-500/20 rounded-full blur-3xl transform -translate-y-1/2" />
         <div className="absolute -left-1/4 top-1/4 w-1/2 h-1/2 bg-blue-500/20 rounded-full blur-3xl" />
@@ -360,7 +352,7 @@ function Process() {
       <div className="hidden sm:block absolute inset-x-1/2 top-1/2 h-1 bg-blue-600/20 z-0 w-1 left-1/2 -translate-x-1/2" />
 
       <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="text-center mb-16">
+        <div className="text-center mb-12">
           <span className="inline-block px-3 py-1 text-sm font-medium bg-gray-800 text-gray-300 rounded-full border border-gray-700 mb-4">
             How It Works
           </span>
@@ -372,7 +364,7 @@ function Process() {
           </p>
         </div>
 
-        <div className="mt-20 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {steps.map((step) => (
             <div
               key={step.title}
@@ -441,10 +433,10 @@ function Pricing() {
   ];
 
   return (
-    <section id="pricing" className="bg-black text-white py-24 relative overflow-hidden">
+    <section id="pricing" className="bg-black text-white py-16 relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-br from-blue-900/20 to-purple-900/20 opacity-50" />
       <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="text-center mb-16">
+        <div className="text-center mb-12">
           <span className="inline-block px-3 py-1 text-sm font-medium bg-gray-800 text-gray-300 rounded-full border border-gray-700 mb-4">
             Pricing
           </span>
@@ -527,10 +519,10 @@ function Results() {
   ];
 
   return (
-    <section id="results" className="py-24 bg-black text-white relative overflow-hidden">
+    <section id="results" className="py-16 bg-black text-white relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-br from-blue-900/20 to-purple-900/20 opacity-50" />
       <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="text-center mb-16">
+        <div className="text-center mb-12">
           <span className="inline-block px-3 py-1 text-sm font-medium bg-gray-800 text-gray-300 rounded-full border border-gray-700 mb-4">
             Results
           </span>
@@ -543,7 +535,7 @@ function Results() {
           </p>
         </div>
 
-        <div className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
           {cases.map((c) => (
             <a
               key={c.name}
@@ -609,10 +601,10 @@ function Comparison() {
   ];
 
   return (
-    <section className="bg-black text-white py-24 relative overflow-hidden">
+    <section className="bg-black text-white py-16 relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-br from-blue-900/20 to-purple-900/20 opacity-50" />
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 text-center">
-        <div className="mb-16">
+        <div className="mb-12">
           <span className="inline-block px-3 py-1 text-sm font-medium bg-gray-800 text-gray-300 rounded-full border border-gray-700 mb-4">
             Comparison
           </span>
