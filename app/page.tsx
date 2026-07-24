@@ -10,12 +10,14 @@ import {
   Phone,
   Mail,
   MapPin,
-  Monitor,
+  ShoppingBag,
   Users,
-  Megaphone,
-  Eye,
   Facebook,
+  Music2,
   Instagram,
+  Globe2,
+  Clock,
+  Rocket,
 } from "lucide-react";
 import Navbar from "./components/Navbar";
 import FAQ from "./components/FAQ";
@@ -99,6 +101,31 @@ function Hero() {
   );
 }
 
+/* ─────────────────────────── STATS ─────────────────────────── */
+function Stats() {
+  const stats = [
+    { Icon: Rocket, value: "40+", label: "Projects Delivered" },
+    { Icon: Globe2, value: "UK · US · CA · AU", label: "Countries We Serve" },
+    { Icon: Clock, value: "7 Days", label: "Avg. Delivery Time" },
+  ];
+
+  return (
+    <section className="bg-black py-12 sm:py-16 border-y border-gray-800">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-10 sm:gap-8 text-center">
+          {stats.map((s) => (
+            <div key={s.label} className="flex flex-col items-center">
+              <s.Icon size={32} className="text-blue-500 mb-3" strokeWidth={1.5} />
+              <div className="text-2xl sm:text-3xl font-bold text-white">{s.value}</div>
+              <div className="text-gray-400 text-sm mt-1">{s.label}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 /* ─────────────────────────── SERVICES ─────────────────────── */
 function Services() {
   const services = [
@@ -111,8 +138,8 @@ function Services() {
         "Product & inventory management",
         "Payment & shipping configuration",
       ],
-      gradient: "from-green-500 to-teal-500",
-      Icon: Monitor,
+      gradient: "from-emerald-500 to-green-600",
+      Icon: ShoppingBag,
     },
     {
       id: "service-meta",
@@ -123,8 +150,8 @@ function Services() {
         "Ad creatives and copy",
         "Performance monitoring",
       ],
-      gradient: "from-blue-500 to-indigo-500",
-      Icon: Megaphone,
+      gradient: "from-blue-600 to-indigo-600",
+      Icon: Facebook,
     },
     {
       id: "service-tiktok",
@@ -135,8 +162,8 @@ function Services() {
         "Audience research & targeting",
         "Conversion tracking",
       ],
-      gradient: "from-pink-500 to-rose-500",
-      Icon: Eye,
+      gradient: "from-slate-800 to-cyan-500",
+      Icon: Music2,
     },
     {
       id: "service-social",
@@ -147,7 +174,7 @@ function Services() {
         "Community engagement",
         "Monthly analytics reports",
       ],
-      gradient: "from-purple-500 to-fuchsia-500",
+      gradient: "from-amber-500 to-orange-600",
       Icon: Users,
     },
   ];
@@ -324,8 +351,20 @@ function Process() {
 function Pricing() {
   const plans = [
     {
+      name: "Shopify Store Development",
+      price: "Custom Quote",
+      suffix: "",
+      desc: "A complete, conversion-optimised Shopify store built and launched from the ground up.",
+      features: [
+        "Custom Store Design & Branding",
+        "Product & Payment Setup",
+        "Mobile-Optimised & Fast",
+      ],
+    },
+    {
       name: "Meta Ads",
       price: "£150",
+      suffix: "/ mo",
       desc: "Ideal for businesses looking to leverage Facebook & Instagram for growth.",
       features: [
         "Comprehensive Ad Setup",
@@ -336,6 +375,7 @@ function Pricing() {
     {
       name: "TikTok Ads",
       price: "£150",
+      suffix: "/ mo",
       desc: "Perfect for businesses seeking to grow with TikTok’s massive reach.",
       features: [
         "Video Ad Strategy",
@@ -344,9 +384,10 @@ function Pricing() {
       ],
     },
     {
-      name: "Meta & TikTok Ads",
+      name: "Multi-Platform Ads",
       price: "£200",
-      desc: "Ideal for businesses looking to maximize reach on both platforms.",
+      suffix: "/ mo",
+      desc: "Ideal for businesses looking to maximize reach across Meta and TikTok together.",
       features: [
         "Full Campaign Setup for Both Platforms",
         "Audience & Creative Optimization",
@@ -372,7 +413,7 @@ function Pricing() {
           </p>
         </div>
 
-        <div className="grid gap-10 grid-cols-1 md:grid-cols-3">
+        <div className="grid gap-10 grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
           {plans.map((plan) => (
             <div
               key={plan.name}
@@ -381,9 +422,11 @@ function Pricing() {
               <div>
                 <h3 className="text-2xl font-bold text-white mb-4">{plan.name}</h3>
                 <p className="text-4xl font-extrabold text-blue-400">
-                  {plan.price} <span className="text-lg font-medium text-gray-400">/ mo</span>
+                  {plan.price} <span className="text-lg font-medium text-gray-400">{plan.suffix}</span>
                 </p>
-                <p className="text-gray-400 mt-2 mb-6">Billed monthly</p>
+                <p className="text-gray-400 mt-2 mb-6">
+                  {plan.suffix ? "Billed monthly" : "Quoted based on your requirements"}
+                </p>
                 <p className="text-gray-300">{plan.desc}</p>
               </div>
               <ul className="mt-8 space-y-3 text-gray-300">
@@ -411,25 +454,25 @@ function Pricing() {
 function Results() {
   const cases = [
     {
-      name: "FreshCart",
+      name: "Sunnamusk",
+      url: "https://sunnamusk.com",
       gradient: "from-emerald-600 to-teal-700",
-      headline: "Achieved an 11x Return on Ad Spend",
-      stat1: { label: "Increase in CTR", value: "85%" },
-      stat2: { label: "Reduction in CPA", value: "37%" },
+      tag: "Fragrance & Home Scents",
+      headline: "Shopify store build and ongoing optimisation.",
     },
     {
-      name: "UrbanThreads",
+      name: "Shnuggle USA",
+      url: "https://shnuggleusa.com",
       gradient: "from-indigo-600 to-blue-700",
-      headline: "Doubled ROI for an Ecommerce Brand",
-      stat1: { label: "Increase in CTR", value: "57%" },
-      stat2: { label: "Reduction in CPR", value: "69%" },
+      tag: "Baby Care Products",
+      headline: "Shopify store build and ongoing optimisation.",
     },
     {
-      name: "GlowLabs",
-      gradient: "from-fuchsia-600 to-purple-700",
-      headline: "Increased Inquiries by 100%",
-      stat1: { label: "Increase in CTR", value: "63%" },
-      stat2: { label: "Reduction in CPA", value: "41%" },
+      name: "Green People",
+      url: "https://greenpeople.co.uk",
+      gradient: "from-amber-600 to-orange-700",
+      tag: "Organic Beauty & Skincare",
+      headline: "Shopify store build and ongoing optimisation.",
     },
   ];
 
@@ -452,9 +495,12 @@ function Results() {
 
         <div className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
           {cases.map((c) => (
-            <div
+            <a
               key={c.name}
-              className="flex flex-col rounded-2xl overflow-hidden bg-gray-900/50 backdrop-blur-sm border border-gray-700 transition-all duration-300 hover:border-gray-500"
+              href={c.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex flex-col rounded-2xl overflow-hidden bg-gray-900/50 backdrop-blur-sm border border-gray-700 transition-all duration-300 hover:border-gray-500 group"
             >
               <div className={`relative h-64 bg-gradient-to-br ${c.gradient}`}>
                 <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40 to-transparent" />
@@ -463,19 +509,15 @@ function Results() {
                 </h3>
               </div>
               <div className="p-6">
+                <span className="inline-block px-3 py-1 text-xs font-medium bg-gray-800 text-gray-300 rounded-full border border-gray-700 mb-4">
+                  {c.tag}
+                </span>
                 <p className="text-lg text-gray-300 mb-4">{c.headline}</p>
-                <div className="grid grid-cols-2 gap-4">
-                  <div className="text-center">
-                    <p className="text-3xl font-bold text-blue-400">{c.stat1.value}</p>
-                    <p className="text-sm text-gray-400">{c.stat1.label}</p>
-                  </div>
-                  <div className="text-center">
-                    <p className="text-3xl font-bold text-blue-400">{c.stat2.value}</p>
-                    <p className="text-sm text-gray-400">{c.stat2.label}</p>
-                  </div>
-                </div>
+                <span className="inline-flex items-center text-blue-400 font-medium group-hover:text-blue-300">
+                  Visit Site <ArrowRight size={16} className="ml-2" />
+                </span>
               </div>
-            </div>
+            </a>
           ))}
         </div>
       </div>
@@ -664,6 +706,7 @@ export default function Home() {
     <main>
       <Navbar />
       <Hero />
+      <Stats />
       <Services />
       <Guarantee />
       <Process />
