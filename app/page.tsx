@@ -23,6 +23,10 @@ import Navbar from "./components/Navbar";
 import FAQ from "./components/FAQ";
 import WhatsAppButton from "./components/WhatsAppButton";
 
+const WHATSAPP_NUMBER = "923090573707";
+const whatsappLink = (message: string) =>
+  `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+
 /* ─────────────────────────── HERO ──────────────────────────── */
 function Hero() {
   return (
@@ -77,7 +81,9 @@ function Hero() {
         <div className="mt-8 sm:mt-10 flex flex-col items-center gap-y-4 sm:flex-row sm:gap-x-6 justify-center">
           <a
             className="rounded-full bg-blue-600 px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold text-white shadow-sm hover:bg-blue-500 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg"
-            href="#contact"
+            href={whatsappLink("Hi MAK Growths, I'd like to start a project.")}
+            target="_blank"
+            rel="noopener noreferrer"
           >
             Start Your Project
             <ArrowRight size={18} className="ml-2 inline-block" />
@@ -99,7 +105,7 @@ function Hero() {
             {["FreshCart", "UrbanThreads", "SwiftShip", "GlowLabs"].map((name) => (
               <span
                 key={name}
-                className="text-lg sm:text-xl font-bold tracking-wider uppercase text-gray-500"
+                className="text-sm sm:text-lg md:text-xl font-bold tracking-wider uppercase text-gray-500 text-center"
               >
                 {name}
               </span>
@@ -272,11 +278,11 @@ function Guarantee() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div className="flex justify-center">
             <div className="relative">
-              <Shield size={256} className="text-blue-600/20" strokeWidth={2} />
-              <CircleCheckBig
-                size={128}
-                className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-blue-400"
+              <Shield
+                className="text-blue-600/20 w-40 h-40 sm:w-56 sm:h-56 md:w-64 md:h-64"
+                strokeWidth={2}
               />
+              <CircleCheckBig className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-blue-400 w-20 h-20 sm:w-28 sm:h-28 md:w-32 md:h-32" />
             </div>
           </div>
           <div className="flex flex-col">
@@ -456,10 +462,14 @@ function Pricing() {
               className="bg-gray-900/50 backdrop-blur-sm rounded-2xl shadow-lg p-8 flex flex-col justify-between border border-gray-700 transition-all duration-300 hover:border-blue-500"
             >
               <div>
-                <h3 className="text-2xl font-bold text-white mb-4">{plan.name}</h3>
-                <p className="text-4xl font-extrabold text-blue-400">
-                  {plan.price} <span className="text-lg font-medium text-gray-400">{plan.suffix}</span>
-                </p>
+                <h3 className="text-2xl font-bold text-white mb-4 min-h-[64px] flex items-center">
+                  {plan.name}
+                </h3>
+                <div className="min-h-[48px] flex items-center">
+                  <p className={`font-extrabold text-blue-400 ${plan.suffix ? "text-4xl" : "text-3xl"}`}>
+                    {plan.price} <span className="text-lg font-medium text-gray-400">{plan.suffix}</span>
+                  </p>
+                </div>
                 <p className="text-gray-400 mt-2 mb-6">
                   {plan.suffix ? "Billed monthly" : "Quoted based on your requirements"}
                 </p>
@@ -473,7 +483,9 @@ function Pricing() {
                 ))}
               </ul>
               <a
-                href="#contact"
+                href={whatsappLink(`Hi MAK Growths, I'm interested in the ${plan.name} plan.`)}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="mt-10 block text-center w-full py-3 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition"
               >
                 Get Started
@@ -662,7 +674,9 @@ function CtaBanner() {
         <div className="mt-6">
           <a
             className="inline-block rounded-full bg-white text-blue-600 px-6 py-3 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-200 hover:-translate-y-0.5"
-            href="#contact"
+            href={whatsappLink("Hi MAK Growths, I'd like a free consultation.")}
+            target="_blank"
+            rel="noopener noreferrer"
           >
             Contact Us
           </a>

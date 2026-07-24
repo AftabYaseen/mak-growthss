@@ -1,7 +1,10 @@
 "use client";
 
 import { useState } from "react";
-import { ChevronDown, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
+
+const WHATSAPP_LINK =
+  "https://wa.me/923090573707?text=Hi%20MAK%20Growths%2C%20I%27d%20like%20to%20know%20more%20about%20your%20services.";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -24,46 +27,12 @@ export default function Navbar() {
               Home
             </a>
 
-            <div className="relative group">
-              <a
-                href="#services"
-                className="flex items-center text-gray-300 hover:text-white px-3 py-2 text-sm font-medium transition-colors rounded-full hover:bg-white/5"
-              >
-                Services
-                <ChevronDown
-                  size={16}
-                  className="ml-1 transform group-hover:rotate-180 transition-transform duration-200"
-                />
-              </a>
-              <div className="absolute left-0 mt-2 w-56 rounded-xl bg-black/50 backdrop-blur-md shadow-lg ring-1 ring-white/10 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform group-hover:translate-y-0 translate-y-2">
-                <div className="py-1">
-                  <a
-                    className="block px-4 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/10"
-                    href="#service-shopify"
-                  >
-                    Shopify Stores
-                  </a>
-                  <a
-                    className="block px-4 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/10"
-                    href="#service-meta"
-                  >
-                    Meta Ads
-                  </a>
-                  <a
-                    className="block px-4 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/10"
-                    href="#service-tiktok"
-                  >
-                    TikTok Ads
-                  </a>
-                  <a
-                    className="block px-4 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/10"
-                    href="#service-social"
-                  >
-                    Social Media Management
-                  </a>
-                </div>
-              </div>
-            </div>
+            <a
+              href="#services"
+              className="flex items-center text-gray-300 hover:text-white px-3 py-2 text-sm font-medium transition-colors rounded-full hover:bg-white/5"
+            >
+              Services
+            </a>
 
             <a
               href="#process"
@@ -79,7 +48,9 @@ export default function Navbar() {
             </a>
             <a
               className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 hover:-translate-y-0.5"
-              href="#contact"
+              href={WHATSAPP_LINK}
+              target="_blank"
+              rel="noopener noreferrer"
             >
               Contact Us
             </a>
@@ -88,7 +59,9 @@ export default function Navbar() {
           <div className="md:hidden flex items-center space-x-2">
             <a
               className="bg-blue-600 hover:bg-blue-700 text-white px-3 py-1.5 rounded-full text-sm font-medium transition-all duration-200"
-              href="#contact"
+              href={WHATSAPP_LINK}
+              target="_blank"
+              rel="noopener noreferrer"
             >
               Contact
             </a>
