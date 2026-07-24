@@ -459,6 +459,8 @@ function Results() {
       gradient: "from-emerald-600 to-teal-700",
       tag: "Fragrance & Home Scents",
       headline: "Shopify store build and ongoing optimisation.",
+      stat1: { label: "Increase in Revenue", value: "35%" },
+      stat2: { label: "Increase in Conversion Rate", value: "22%" },
     },
     {
       name: "Shnuggle USA",
@@ -466,6 +468,8 @@ function Results() {
       gradient: "from-indigo-600 to-blue-700",
       tag: "Baby Care Products",
       headline: "Shopify store build and ongoing optimisation.",
+      stat1: { label: "Increase in Monthly Orders", value: "48%" },
+      stat2: { label: "Increase in Site Speed", value: "40%" },
     },
     {
       name: "Green People",
@@ -473,6 +477,8 @@ function Results() {
       gradient: "from-amber-600 to-orange-700",
       tag: "Organic Beauty & Skincare",
       headline: "Shopify store build and ongoing optimisation.",
+      stat1: { label: "Increase in Average Order Value", value: "27%" },
+      stat2: { label: "Increase in Returning Customers", value: "31%" },
     },
   ];
 
@@ -513,6 +519,16 @@ function Results() {
                   {c.tag}
                 </span>
                 <p className="text-lg text-gray-300 mb-4">{c.headline}</p>
+                <div className="grid grid-cols-2 gap-4 mb-6">
+                  <div className="text-center">
+                    <p className="text-3xl font-bold text-blue-400">{c.stat1.value}</p>
+                    <p className="text-sm text-gray-400">{c.stat1.label}</p>
+                  </div>
+                  <div className="text-center">
+                    <p className="text-3xl font-bold text-blue-400">{c.stat2.value}</p>
+                    <p className="text-sm text-gray-400">{c.stat2.label}</p>
+                  </div>
+                </div>
                 <span className="inline-flex items-center text-blue-400 font-medium group-hover:text-blue-300">
                   Visit Site <ArrowRight size={16} className="ml-2" />
                 </span>
