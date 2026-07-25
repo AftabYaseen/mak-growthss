@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "MAK Growths | Shopify, Meta Ads, TikTok Ads & Social Media Management",
+  title: "MAK Growths | #1 Shopify Agency in Pakistan",
   description:
     "We help businesses grow online with professionally managed Shopify stores, Meta Ads, TikTok Ads, and Social Media Management. Local and international.",
   keywords: [
